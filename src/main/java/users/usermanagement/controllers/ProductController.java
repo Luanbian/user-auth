@@ -1,11 +1,13 @@
 package users.usermanagement.controllers;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import users.usermanagement.data.usecases.CreateProduct;
+import users.usermanagement.domain.dtos.RequestProduct;
+import users.usermanagement.entities.Product;
 
 @RestController()
 @RequestMapping("api/product")
@@ -18,9 +20,14 @@ public class ProductController {
         this.createProduct = createProduct;
     }
 
+    @PostMapping
+    public ResponseEntity createProduct (@RequestBody @Valid RequestProduct data) {
+        Product newProduct = createProduct.perform(data);
+        return ResponseEntity.ok(newProduct);
+    }
+
     @GetMapping
     public ResponseEntity getProducts () {
-        String usecase = createProduct.perform();
-        return ResponseEntity.ok(usecase);
+        return ResponseEntity.ok("deu certo");
     }
 }
