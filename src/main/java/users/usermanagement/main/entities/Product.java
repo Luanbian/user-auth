@@ -1,4 +1,4 @@
-package users.usermanagement.entities;
+package users.usermanagement.main.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -6,11 +6,7 @@ import users.usermanagement.domain.dtos.RequestProduct;
 
 @Entity(name = "product")
 @Table(name = "product")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode(of = "id")
+@Data
 public class Product {
     @Id @GeneratedValue(strategy = GenerationType.UUID)
     private String id;

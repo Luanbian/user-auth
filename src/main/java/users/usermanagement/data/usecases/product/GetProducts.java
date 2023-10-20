@@ -1,8 +1,8 @@
-package users.usermanagement.data.usecases;
+package users.usermanagement.data.usecases.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import users.usermanagement.entities.Product;
+import users.usermanagement.main.entities.Product;
 import users.usermanagement.infra.repository.ProductRepository;
 
 import java.util.List;

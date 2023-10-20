@@ -4,10 +4,10 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import users.usermanagement.data.usecases.CreateProduct;
-import users.usermanagement.data.usecases.GetProducts;
+import users.usermanagement.data.usecases.product.CreateProduct;
+import users.usermanagement.data.usecases.product.GetProducts;
 import users.usermanagement.domain.dtos.RequestProduct;
-import users.usermanagement.entities.Product;
+import users.usermanagement.main.entities.Product;
 
 import java.util.List;
 
