@@ -34,7 +34,8 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody @Valid RegisterDto data) {
-        if(this.repository.findByLogin(data.login()) != null) {
+        var alreadyExist = this.repository.findByLogin(data.login());
+        if(alreadyExist != null) {
             return ResponseEntity.badRequest().build();
         } else {
             String encrypterPassword = new BCryptPasswordEncoder().encode(data.password());
