@@ -16,7 +16,7 @@ import users.usermanagement.infra.repository.UserRepository;
 import users.usermanagement.main.entities.User;
 
 @RestController
-@RequestMapping("auth")
+@RequestMapping("api/auth")
 public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;
